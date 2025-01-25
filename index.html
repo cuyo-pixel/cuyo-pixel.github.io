@@ -317,7 +317,7 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             const scrolled = window.pageYOffset;
-            header.style.transform = `rotate(${Math.min(scrolled * 0.01, 3)}deg)`;
+            header.style.transform = `rotate(${Math.min(scrolled * 0.01, 2)}deg)`;
         });
 
         // Scroll animations
@@ -327,7 +327,7 @@
                     entry.target.classList.add('animated');
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.05 });
 
         document.querySelectorAll('.scroll-animation').forEach((el) => observer.observe(el));
     </script>
