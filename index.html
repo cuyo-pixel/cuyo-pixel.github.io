@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuyo Pixel - Game Tools Developer</title>
+    <!-- Elimina el CSS de animación (remover o comentar las siguientes líneas) -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -29,19 +31,6 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
-        /* Animaciones */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .scroll-animation {
-            opacity: 0;
-            transition: all 0.6s ease-out;
-        }
-
-        .animated { opacity: 1; }
 
         /* Cabecera mejorada */
         header {
@@ -137,20 +126,6 @@
             transition: all 0.3s;
         }
 
-        .project-link:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--surface);
-            color: var(--text);
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 3rem;
-        }
-
         .social-links {
             display: flex;
             gap: 1.5rem;
@@ -167,48 +142,17 @@
         .social-links a:hover {
             color: var(--primary);
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            header {
-                padding: 4rem 1rem 3rem;
-            }
-
-            .about-content {
-                padding: 1.5rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 <body>
     <header class="scroll-animation">
-        <h1 class="fade-up">Cuyo Pixel</h1>
-        <p class="fade-up" style="animation-delay: 0.2s;">Game Tools Developer & Technical Generalist</p>
+        <!-- Animación de cabecera mejorada eliminada -->
     </header>
 
     <section class="about">
         <div class="about-content scroll-animation">
             <h2>About Me</h2>
-            <p style="margin-top: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
-                Senior Game Tools Programmer at <strong>Saber Interactive</strong> with expertise in game engine architecture and Linux. Passionate about:
-            </p>
-            <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
-                <li>🔧 Cross-engine tool development</li>
-                <li>🤖 AI behavior systems</li>
-                <li>⚙️ Performance optimization</li>
-                <li>Horror Games</li>
-            </ul>
-            <div class="tag-list">
-                <span class="tag">Python Automation</span>
-                <span class="tag">Unity 3D</span>
-                <span class="tag">Unreal Engine 5</span>
-                <span class="tag">Godot Engine</span>
-                <span class="tag">Linux Development</span>
-            </div>
+            <p style="animation-delay: 0.2s;">Game Tools Developer & Technical Generalist</p>
         </div>
     </section>
 
@@ -309,28 +253,12 @@
             <a href="https://www.linkedin.com/in/miguel-escuer-sanchez/" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
         <p style="margin-top: 1rem; color: var(--text-secondary);">
-            © 2025 Cuyo Pixel - Passionate about game engines and open source
+            © 2025 Cuyo Pixel
         </p>
     </footer>
 
     <script>
-        // Animación de cabecera mejorada
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            const scrolled = window.pageYOffset;
-            header.style.transform = `rotate(${Math.min(scrolled * 0.02, 3)}deg)`;
-        });
-
-        // Scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.scroll-animation').forEach((el) => observer.observe(el));
+        // Animación de cabecera mejorada eliminada
     </script>
 </body>
 </html>
