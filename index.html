@@ -30,27 +30,10 @@
             overflow-x: hidden;
         }
 
-        /* Animations */
+        /* Animaciones */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .scroll-animation {
@@ -58,25 +41,16 @@
             transition: all 0.6s ease-out;
         }
 
-        .animated {
-            opacity: 1;
-        }
+        .animated { opacity: 1; }
 
-        .fade-up {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .slide-left {
-            animation: slideInLeft 0.8s ease-out;
-        }
-
-        /* Header Section */
+        /* Cabecera mejorada */
         header {
             background: linear-gradient(135deg, var(--surface), var(--primary));
             padding: 6rem 1rem 4rem;
             text-align: center;
             position: relative;
             overflow: hidden;
+            transform-origin: top center;
         }
 
         header::after {
@@ -88,9 +62,10 @@
             height: 100px;
             background: var(--background);
             transform: rotate(3deg);
+            z-index: 2;
         }
 
-        /* About Section */
+        /* Sección sobre mí */
         .about {
             max-width: 800px;
             margin: 4rem auto;
@@ -119,7 +94,7 @@
             font-size: 0.9rem;
         }
 
-        /* Projects Grid */
+        /* Proyectos */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -141,8 +116,30 @@
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .project-role {
+            color: var(--text-secondary);
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            border: 1px solid var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            background: var(--primary);
+            color: white;
         }
 
         /* Footer */
@@ -171,7 +168,7 @@
             color: var(--primary);
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
             header {
                 padding: 4rem 1rem 3rem;
@@ -190,77 +187,91 @@
 <body>
     <header class="scroll-animation">
         <h1 class="fade-up">Cuyo Pixel</h1>
-        <p class="fade-up" style="animation-delay: 0.2s;">Game Tools Developer & Engine Architect</p>
+        <p class="fade-up" style="animation-delay: 0.2s;">Game Tools Developer & Technical Generalist</p>
     </header>
 
     <section class="about">
-        <div class="about-content scroll-animation slide-left">
+        <div class="about-content scroll-animation">
             <h2>About Me</h2>
             <p style="margin-top: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
-                Senior Tools Developer at <strong>Saber Interactive</strong> with 6 years of experience in engine architecture and development pipelines. Linux enthusiast passionate about:
+                Senior Tools Developer at <strong>Saber Interactive</strong> with expertise in game engine architecture and development tools. Linux enthusiast passionate about:
             </p>
             <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
-                <li>🔧 Building robust development tools</li>
-                <li>🎮 Reverse-engineering game engines</li>
-                <li>🐧 Open-source contributions</li>
-                <li>⚙️ Engine customization & optimization</li>
+                <li>🔧 Cross-engine tool development</li>
+                <li>🤖 AI behavior systems</li>
+                <li>⚙️ Performance optimization</li>
             </ul>
             <div class="tag-list">
-                <span class="tag">C# .NET Core</span>
                 <span class="tag">Python Automation</span>
                 <span class="tag">Unity 3D</span>
                 <span class="tag">Unreal Engine 5</span>
                 <span class="tag">Godot Engine</span>
-                <span class="tag">Linux System Tools</span>
+                <span class="tag">Linux Development</span>
             </div>
         </div>
     </section>
 
     <section class="container">
-        <h2 class="scroll-animation">Featured Projects</h2>
+        <h2 class="scroll-animation">Game Projects</h2>
         <div class="projects-grid">
             <!-- Turok: Origins -->
             <div class="project-card scroll-animation">
                 <img src="https://via.placeholder.com/400x200/6c5ce7/ffffff?text=Turok+Origins" alt="Turok Origins" style="border-radius: 8px; width: 100%">
-                <h3 style="margin: 1rem 0">Turok: Origins</h3>
-                <p style="color: var(--text-secondary)">Third-person co-op shooter | Saber Interactive</p>
-                <ul style="margin: 1rem 0; padding-left: 1rem">
-                    <li>UE5 optimization tools development</li>
-                    <li>DNA-based upgrade systems</li>
-                    <li>Multiplatform performance analysis</li>
+                <h3>Turok: Origins</h3>
+                <p class="project-role">Tools Programmer | Unreal Engine</p>
+                <ul>
+                    <li>Unreal Engine Editor Tools</li>
+                    <li>External Tools for Engine Support</li>
                 </ul>
-                <a href="https://www.saber.games/our-games/" target="_blank" style="color: var(--primary); text-decoration: none;">Official Site →</a>
+                <a href="https://store.steampowered.com/app/1954200/Turok/" target="_blank" class="project-link">Steam Page</a>
             </div>
 
             <!-- Radikal Fighters -->
             <div class="project-card scroll-animation">
                 <img src="https://via.placeholder.com/400x200/6c5ce7/ffffff?text=Radikal+Fighters" alt="Radikal Fighters" style="border-radius: 8px; width: 100%">
-                <h3 style="margin: 1rem 0">Radikal Fighters</h3>
-                <p style="color: var(--text-secondary)">Top-down multiplayer shooter | Steam</p>
-                <ul style="margin: 1rem 0; padding-left: 1rem">
-                    <li>Network architecture for 8 players</li>
-                    <li>Cross-platform matchmaking system</li>
-                    <li>Godot Engine + C# implementation</li>
+                <h3>Radikal Fighters</h3>
+                <p class="project-role">Tools Developer | Unreal Engine</p>
+                <ul>
+                    <li>Unreal Engine Editor Tools</li>
+                    <li>External Tools for Engine Support</li>
                 </ul>
-                <a href="https://store.steampowered.com/app/2073930/Radikal_Fighters/" target="_blank" style="color: var(--primary); text-decoration: none;">Steam Page →</a>
+                <a href="https://store.steampowered.com/app/2073930/Radikal_Fighters/" target="_blank" class="project-link">Steam Page</a>
             </div>
 
-            <!-- Custom Engines -->
+            <!-- Pots and Potions -->
             <div class="project-card scroll-animation">
-                <h3>Engine Modding Projects</h3>
-                <div class="tag-list" style="margin: 1rem 0">
-                    <span class="tag">Unity 3D</span>
-                    <span class="tag">Unreal Engine 5</span>
-                    <span class="tag">Godot 4</span>
-                </div>
-                <p style="color: var(--text-secondary)">
-                    Custom engine modifications and open-source tools:
-                </p>
-                <ul style="margin: 1rem 0; padding-left: 1rem">
-                    <li>Godot 4 GDNative bindings generator</li>
-                    <li>UE5 Python automation framework</li>
-                    <li>Unity DOTS UI framework</li>
+                <img src="https://via.placeholder.com/400x200/6c5ce7/ffffff?text=Pots+and+Potions" alt="Pots and Potions" style="border-radius: 8px; width: 100%">
+                <h3>Pots and Potions</h3>
+                <p class="project-role">AI & Generalist Programmer | Unreal Engine</p>
+                <ul>
+                    <li>AI Programming</li>
+                    <li>Core Mechanics Programming</li>
                 </ul>
+                <a href="https://store.steampowered.com/app/2371970/Pots_and_Potions/" target="_blank" class="project-link">Steam Page</a>
+            </div>
+
+            <!-- Wild Cards Football -->
+            <div class="project-card scroll-animation">
+                <img src="https://via.placeholder.com/400x200/6c5ce7/ffffff?text=Wild+Cards+Football" alt="Wild Cards Football" style="border-radius: 8px; width: 100%">
+                <h3>Wild Cards Football</h3>
+                <p class="project-role">Tools Programmer</p>
+                <ul>
+                    <li>Unreal Engine Editor Tools</li>
+                    <li>External Tools for Engine Support</li>
+                </ul>
+                <a href="https://store.steampowered.com/app/2401230/Wild_Cards_Football/" target="_blank" class="project-link">Steam Page</a>
+            </div>
+
+            <!-- Stelunio -->
+            <div class="project-card scroll-animation">
+                <img src="https://via.placeholder.com/400x200/6c5ce7/ffffff?text=Stelunio" alt="Stelunio" style="border-radius: 8px; width: 100%">
+                <h3>Stelunio</h3>
+                <p class="project-role">Generalist Programmer | Unity</p>
+                <ul>
+                    <li>Mobile performance optimization</li>
+                    <li>Google Play Services integration</li>
+                </ul>
+                <a href="https://play.google.com/store/apps/details?id=com.JellySword.Stelunio" target="_blank" class="project-link">Play Store</a>
             </div>
         </div>
     </section>
@@ -270,31 +281,28 @@
         <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))">
             <div class="project-card scroll-animation">
                 <h3>Unity 3D</h3>
-                <p style="color: var(--text-secondary)">Advanced tooling development:</p>
-                <ul style="margin: 1rem 0; padding-left: 1rem">
-                    <li>Custom Editor extensions</li>
-                    <li>Burst Compiler optimizations</li>
-                    <li>ECS/DOTS architecture</li>
+                <ul>
+                    <li>General Use</li>
+                    <li>Editor Tools Development</li>
+                    <li>Mobile Optimization</li>
                 </ul>
             </div>
 
             <div class="project-card scroll-animation">
                 <h3>Unreal Engine 5</h3>
-                <p style="color: var(--text-secondary)">Core systems development:</p>
-                <ul style="margin: 1rem 0; padding-left: 1rem">
-                    <li>Gameplay Ability System</li>
-                    <li>Nanite/Lumen optimizations</li>
-                    <li>Automation tools (Python)</li>
+                <ul>
+                    <li>General Use</li>
+                    <li>Engine Tools</li>
+                    <li>Automation Scripts</li>
+                    <li>Plugin Development</li>
                 </ul>
             </div>
 
             <div class="project-card scroll-animation">
                 <h3>Godot Engine</h3>
-                <p style="color: var(--text-secondary)">Engine contributions:</p>
-                <ul style="margin: 1rem 0; padding-left: 1rem">
-                    <li>.NET 6 integration</li>
-                    <li>GDExtension development</li>
-                    <li>Export template customization</li>
+                <ul>
+                    <li>General Use</li>
+                    <li>Editor Customization</li>
                 </ul>
             </div>
         </div>
@@ -302,17 +310,22 @@
 
     <footer>
         <div class="social-links">
-            <a href="https://github.com/cuyo-pixel" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/cuyo-pixel" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://twitter.com/cuyo_pixel" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/miguel-escuer-sanchez/" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
         <p style="margin-top: 1rem; color: var(--text-secondary);">
-            © 2023 Cuyo Pixel - Passionate about game engines and Linux
+            © 2025 Cuyo Pixel - Passionate about game engines and open source
         </p>
     </footer>
 
     <script>
-        // Scroll Animation Handler
+        // Animación de cabecera mejorada
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrolled = window.pageYOffset;
+            header.style.transform = `rotate(${Math.min(scrolled * 0.02, 3)}deg)`;
+        });
+
+        // Scroll animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -321,16 +334,7 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.scroll-animation').forEach((el) => {
-            observer.observe(el);
-        });
-
-        // Dynamic header rotation
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            const scrolled = window.pageYOffset;
-            header.style.transform = `rotate(${scrolled * 0.05}deg)`;
-        });
+        document.querySelectorAll('.scroll-animation').forEach((el) => observer.observe(el));
     </script>
 </body>
 </html>
